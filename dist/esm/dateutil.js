@@ -148,7 +148,7 @@ export var dateTZtoISO8601 = function (date, timeZone) {
     // date format for sv-SE is almost ISO8601
     var dateStr = date.toLocaleString('sv-SE', { timeZone: timeZone });
     // '2023-02-07 10:41:36'
-    return dateStr.replace('em', '').trim().replace(' ', 'T') + 'Z';
+    return (dateStr.replace('em', '').replace('fm', '').trim().replace(' ', 'T') + 'Z');
 };
 export var dateInTimeZone = function (date, timeZone) {
     var localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
